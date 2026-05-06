@@ -23,12 +23,19 @@ public class EnemySpawner : MonoBehaviour
         StartCoroutine(WaitToSpawn());
     }
 
+    public void StopSpawning()
+    {
+        StopAllCoroutines();
+    }
+
 
     IEnumerator WaitToSpawn()
     {
         yield return new WaitForSeconds(respawCooldown);
         EnemySpawn();
     }
+
+
 
 
 

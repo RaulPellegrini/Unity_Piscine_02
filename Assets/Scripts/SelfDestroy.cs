@@ -1,16 +1,16 @@
 using System.Collections;
 using UnityEngine;
 
-public class BulletSelfDestroy : MonoBehaviour
+public class SelfDestroy : MonoBehaviour
 {
     [SerializeField] float countdown = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(SelfDestroy());
+        StartCoroutine(SelfDestroyCoutdown());
     }
 
-    IEnumerator SelfDestroy()
+    IEnumerator SelfDestroyCoutdown()
     {
         yield return new WaitForSeconds(countdown);
         Destroy(this.gameObject);
