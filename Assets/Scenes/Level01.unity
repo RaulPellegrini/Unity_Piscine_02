@@ -132239,8 +132239,11 @@ GameObject:
   m_Component:
   - component: {fileID: 583495564}
   - component: {fileID: 583495563}
+  - component: {fileID: 583495567}
+  - component: {fileID: 583495566}
+  - component: {fileID: 583495565}
   m_Layer: 0
-  m_Name: Turret1
+  m_Name: Turret
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -132321,6 +132324,84 @@ Transform:
   - {fileID: 961771092}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &583495565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583495562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3531894356ed29746bfb3973a1b60a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretAI
+  bullet: {fileID: 0}
+  fireRate: 1
+  bulletSpawnLocation: {fileID: 0}
+--- !u!58 &583495566
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583495562}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 4.57
+--- !u!50 &583495567
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583495562}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &624935366
 GameObject:
   m_ObjectHideFlags: 0
@@ -141495,24 +141576,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!1 &1690198723 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4458443624227666066, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
-  m_PrefabInstance: {fileID: 126074354412528906}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1690198729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1690198723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2efe2163ba322d14d9e4b8449bb88cf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletSelfDestroy
-  countdown: 5.96
 --- !u!1 &1719426173
 GameObject:
   m_ObjectHideFlags: 0
@@ -142835,7 +142898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyToSpawn: {fileID: 6228243125453996515, guid: 9771ab69ff4d75b4fb284e2b46009489, type: 3}
   locationToSpawn: {fileID: 508153726}
-  respawCooldown: 3
+  respawCooldown: 1
 --- !u!114 &1799722823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142908,6 +142971,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5561456606655883020, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
+      propertyPath: countdown
+      value: 999
+      objectReference: {fileID: 0}
     - target: {fileID: 8540583318818531971, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
       propertyPath: damage
       value: 10
@@ -142915,10 +142982,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4458443624227666066, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1690198729}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
 --- !u!1001 &5685187028541666264
 PrefabInstance:
@@ -143031,7 +143095,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7750517478618203460, guid: 9771ab69ff4d75b4fb284e2b46009489, type: 3}
       propertyPath: damage
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
