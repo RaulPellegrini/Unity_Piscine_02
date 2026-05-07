@@ -22,10 +22,13 @@ public class TurretAI : MonoBehaviour
     {
         if(enemiesInRange.Count > 0 )
         {
+
             shottingDirection = TargetEnemy().transform.position - this.transform.position;
             shottingDirection.Normalize();
-            Instantiate(bullet, bulletLocation, Quaternion.identity);
+            GameObject enemyInRange = Instantiate(bullet, bulletLocation, Quaternion.identity);
+            enemyInRange.GetComponent<BulletDirection>().SetDirection(shottingDirection);
             StartCoroutine(FireCooldown());
+
         }
 
     }
