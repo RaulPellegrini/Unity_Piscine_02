@@ -132336,9 +132336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3531894356ed29746bfb3973a1b60a59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TurretAI
-  bullet: {fileID: 0}
+  bullet: {fileID: 4458443624227666066, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
   fireRate: 1
-  bulletSpawnLocation: {fileID: 0}
+  bulletSpawnLocation: {fileID: 961771091}
 --- !u!58 &583495566
 CircleCollider2D:
   m_ObjectHideFlags: 0

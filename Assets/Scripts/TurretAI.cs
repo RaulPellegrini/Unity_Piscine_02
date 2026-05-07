@@ -18,16 +18,16 @@ public class TurretAI : MonoBehaviour
         bulletLocation = bulletSpawnLocation.transform.position;
     }
 
-    private void shot() // you stopped here
+    private void shot()
     {
-        // if(enemiesInRange != Empty<>)
-        // {
-            
-        // }
-        shottingDirection = TargetEnemy().transform.position - this.transform.position;
-        shottingDirection.Normalize();
-        Instantiate(bullet, bulletLocation, Quaternion.identity);
-        StartCoroutine(FireCooldown());
+        if(enemiesInRange.Count > 0 )
+        {
+            shottingDirection = TargetEnemy().transform.position - this.transform.position;
+            shottingDirection.Normalize();
+            Instantiate(bullet, bulletLocation, Quaternion.identity);
+            StartCoroutine(FireCooldown());
+        }
+
     }
 
     private GameObject TargetEnemy()
@@ -52,7 +52,10 @@ public class TurretAI : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Enemy"))
+        {
             enemiesInRange.Add(collision.gameObject);
+            shot();
+        }
 
     }
     void OnTriggerExit2D(Collider2D collision)
