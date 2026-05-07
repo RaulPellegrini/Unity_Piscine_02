@@ -10,8 +10,8 @@ public class TurretAI : MonoBehaviour
     [SerializeField] GameObject bulletSpawnLocation;
     private Vector3 bulletLocation;
     private Vector3 shottingDirection;
-
     private List<GameObject> enemiesInRange = new List<GameObject>();
+    private bool canShot = true;
 
     void Start()
     {
@@ -20,13 +20,15 @@ public class TurretAI : MonoBehaviour
 
     private void shot()
     {
-        if(enemiesInRange.Count > 0 )
+        enemiesInRange.RemoveAll(enemy => enemy == null);
+        if(enemiesInRange.Count > 0 && canShot)
         {
 
             shottingDirection = TargetEnemy().transform.position - this.transform.position;
             shottingDirection.Normalize();
             GameObject enemyInRange = Instantiate(bullet, bulletLocation, Quaternion.identity);
             enemyInRange.GetComponent<BulletDirection>().SetDirection(shottingDirection);
+            canShot = false;
             StartCoroutine(FireCooldown());
 
         }
@@ -70,6 +72,7 @@ public class TurretAI : MonoBehaviour
     IEnumerator FireCooldown()
     {
         yield return new WaitForSeconds(fireRate);
+        canShot = true;
         shot();
     }
 }

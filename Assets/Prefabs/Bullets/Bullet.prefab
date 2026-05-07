@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2efe2163ba322d14d9e4b8449bb88cf2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletSelfDestroy
-  countdown: 1
+  countdown: 1.5
 --- !u!114 &3038759205745753060
 MonoBehaviour:
   m_ObjectHideFlags: 0
