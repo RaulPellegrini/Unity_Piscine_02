@@ -92,6 +92,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -5697381633966205013, guid: 13de71b518d707143bf0ff17a208a189, type: 3}
+    - target: {fileID: 8265943507759228834, guid: 8ed99b1f8ca981040a9752f9b2a90383, type: 3}
+      propertyPath: manaCost
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8265943507759228834, guid: 8ed99b1f8ca981040a9752f9b2a90383, type: 3}
+      propertyPath: summonCooldown
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

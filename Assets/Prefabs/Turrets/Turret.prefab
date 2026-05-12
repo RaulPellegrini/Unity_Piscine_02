@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1291231483895777828}
   - component: {fileID: 4807825812015759413}
   - component: {fileID: 2956418028259690534}
+  - component: {fileID: 8265943507759228834}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Untagged
@@ -173,6 +174,20 @@ MonoBehaviour:
   bullet: {fileID: 4458443624227666066, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
   fireRate: 1
   bulletSpawnLocation: {fileID: 7631025793285036646}
+--- !u!114 &8265943507759228834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4028852708943081244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57890471e526c964a9f15503e71cc007, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TurretDetails
+  manaCost: 5
+  reSummonCooldown: 15
 --- !u!1 &7631025793285036646
 GameObject:
   m_ObjectHideFlags: 0
