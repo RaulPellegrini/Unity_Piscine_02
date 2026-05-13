@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1933336722674051139}
   - component: {fileID: 6836550873158755478}
   - component: {fileID: 1537230474123559521}
-  - component: {fileID: 5982623359125818592}
+  - component: {fileID: 6615895300605269768}
   m_Layer: 5
   m_Name: Invocation
   m_TagString: Untagged
@@ -58,13 +58,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061520746870304737}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.64705884}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -81,7 +81,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5982623359125818592
+--- !u!114 &6615895300605269768
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -93,7 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5429d700429c1cf4291a44994d92dbe8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UITextUpdate
-  elementsUI: []
+  elementsUI:
+  - {fileID: 3258059165195375292}
+  - {fileID: 4221039562376539413}
+  - {fileID: 2668272741098384785}
   sprite: {fileID: 6935804020452840072}
 --- !u!1 &2668272741098384785
 GameObject:
@@ -540,8 +543,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000042915, y: -0.000048637}
-  m_SizeDelta: {x: 79.888, y: 79.889}
+  m_AnchoredPosition: {x: 5.7587, y: -5.7589}
+  m_SizeDelta: {x: 68.3705, y: 68.3713}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6968395967014763706
 CanvasRenderer:
@@ -571,7 +574,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5697381633966205013, guid: 13de71b518d707143bf0ff17a208a189, type: 3}
+  m_Sprite: {fileID: -6757490200367464463, guid: 13de71b518d707143bf0ff17a208a189, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

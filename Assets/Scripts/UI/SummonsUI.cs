@@ -21,7 +21,7 @@ public class SummonsUI : MonoBehaviour
             float damage = bullets[i].GetComponent<Damage>().damage;
             Sprite image = dragonsPrefabs[i].GetComponent<SpriteRenderer>().sprite;
 
-            float[] details = {manaCost, cooldown, damage};
+            float[] details = {manaCost, damage, cooldown};
             invocationsUI[i].GetComponent<UIInvocationDisplay>().setDetails(details, image);
         }
 
