@@ -17,6 +17,18 @@ PrefabInstance:
       value: IceBall Variant
       objectReference: {fileID: 0}
     - target: {fileID: 4955160681414560409, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
+      propertyPath: m_Size.x
+      value: 0.26545304
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955160681414560409, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
+      propertyPath: m_Size.y
+      value: 0.26545304
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955160681414560409, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4955160681414560409, guid: 110f567e9f0707a4fb18f46f98760f04, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 0.32
       objectReference: {fileID: 0}
