@@ -2,15 +2,19 @@ using UnityEngine;
 
 public class CastleHealth : Health
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject[] heartUI;
+
+    private void Start()
     {
-        
+        if(health != heartUI.Length)
+            Debug.Log("Unmatching healthpoints and UI");
+    }
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        if(health>= 0 && health < heartUI.Length)
+            heartUI[((int) health)].GetComponent<HealthUI>().HealthUIUpdate();
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

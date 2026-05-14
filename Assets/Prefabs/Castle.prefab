@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8636508124159125865}
   - component: {fileID: 7338983478632073621}
   - component: {fileID: 3996030962012863386}
-  - component: {fileID: 6755257313594088319}
   - component: {fileID: -5561873841882452540}
+  - component: {fileID: 2136322376396392695}
   m_Layer: 0
   m_Name: Castle
   m_TagString: Untagged
@@ -168,19 +168,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
---- !u!114 &6755257313594088319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5979318573781571277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f08509537deb2646a96dc9f7fc8db8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Health
-  health: 5
 --- !u!114 &-5561873841882452540
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +180,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79ae830df048cde42a14f806d8405d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CastleDestoyed
+--- !u!114 &2136322376396392695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5979318573781571277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98012e0745fa3534db5cb26e3925facb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CastleHealth
+  health: 5
+  heartUI:
+  - {fileID: 0}
