@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -4046770941285246105, guid: 9771ab69ff4d75b4fb284e2b46009489, type: 3}
+      propertyPath: manaToBeRewarded
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1463446781335246123, guid: 9771ab69ff4d75b4fb284e2b46009489, type: 3}
       propertyPath: m_Sprite
       value: 

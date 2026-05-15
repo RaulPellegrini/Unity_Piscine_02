@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9091467673195947789}
   - component: {fileID: 8853592106848926137}
   - component: {fileID: 7750517478618203460}
+  - component: {fileID: -4046770941285246105}
   - component: {fileID: 444079166959128921}
   m_Layer: 6
   m_Name: Enemy
@@ -209,6 +210,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Damage
   damage: 1
+--- !u!114 &-4046770941285246105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6228243125453996515}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9141d7b3e29067c40a3a95bab12b834a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDestroyed
+  manaToBeRewarded: 3
 --- !u!114 &444079166959128921
 MonoBehaviour:
   m_ObjectHideFlags: 0
