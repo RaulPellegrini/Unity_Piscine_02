@@ -144425,7 +144425,7 @@ MonoBehaviour:
   - {fileID: 1638784197}
   - {fileID: 1354734832}
   - {fileID: 869035095}
-  mana: 3
+  mana: 2
 --- !u!1 &1940432530 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8471599673956195349, guid: f8bf964106505c64fa6271fc2d0397d0, type: 3}
@@ -144633,15 +144633,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1581468624706740622, guid: 876a175a39304d04592b5219b515aaa7, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1581468624706740622, guid: 876a175a39304d04592b5219b515aaa7, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1581468624706740622, guid: 876a175a39304d04592b5219b515aaa7, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7198760508225002189, guid: 876a175a39304d04592b5219b515aaa7, type: 3}
       propertyPath: m_Name
