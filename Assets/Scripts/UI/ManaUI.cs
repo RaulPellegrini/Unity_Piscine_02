@@ -9,7 +9,9 @@ public class MP : MonoBehaviour
     void Start()
     {
         EnemyDestroyed.ManaReward += manaLisener;
+        ManaStart(mana);
     }
+
 
     void OnDestroy()
     {
@@ -18,7 +20,7 @@ public class MP : MonoBehaviour
 
     private void manaLisener(int manaGained)
     {
-        Debug.Log("I heard you!");
+        //Debug.Log("I heard you!");
         for(int i = 0; i < manaGained && i <manaPointsUI.Length; i++)
             ManaRegen();
     }
@@ -38,6 +40,13 @@ public class MP : MonoBehaviour
             manaPointsUI[mana].GetComponent<Image>().color = Color.black;
             mana --;
         }
+    }
+
+    private void ManaStart(int startingMana)
+    {
+        for(int i = 0; i < startingMana; i++)
+            manaPointsUI[i].GetComponent<Image>().color = Color.white;
+
     }
 
 
