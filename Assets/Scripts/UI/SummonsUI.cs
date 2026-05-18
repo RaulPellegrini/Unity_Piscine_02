@@ -23,6 +23,7 @@ public class SummonsUI : MonoBehaviour
 
             float[] details = {manaCost, damage, cooldown};
             invocationsUI[i].GetComponent<UIInvocationDisplay>().setDetails(details, image);
+            invocationsUI[i].GetComponent<DragHandler>().SetDragon(dragonsPrefabs[i]);
         }
 
     }
