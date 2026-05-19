@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class DragHandler : MonoBehaviour
+public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     [SerializeField] GameObject dragonPrefab;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -8,5 +10,20 @@ public class DragHandler : MonoBehaviour
     public void SetDragon(GameObject Prefab)
     {
         dragonPrefab = Prefab;
+    }
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+
     }
 }
