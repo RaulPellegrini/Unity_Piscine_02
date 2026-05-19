@@ -14,16 +14,17 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        
+        //Setup phase
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        
+        //UpdatePhase
+        //ghost.Object.Transform.position = eventData.position;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-
+        //resolve phase
     }
 }
