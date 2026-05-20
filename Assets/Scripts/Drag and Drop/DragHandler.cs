@@ -1,11 +1,12 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     private GameObject dragon;
+    private GameObject ghostDragon;
     private float mp;
     private float mpCost;
     private float cdTime;
@@ -24,18 +25,26 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        mp = GetComponentInParent<ManaUI>().mana;
-        if(mp > mpCost && !inCd)
-        {
-            
-        }
         //Setup phase
+        mp = GetComponentInParent<ManaUI>().mana;
+        if(mp >= mpCost && !inCd)
+        {
+            ghostDragon = new GameObject("Ghost Dragon");
+            ghostDragon.AddComponent<SpriteRenderer>().sprite = dragon.GetComponent<SpriteRenderer>().sprite;
+            ghostDragon.GetComponent<SpriteRenderer>().sortingOrder = 10;
+            ghostDragon.transform.localScale = new Vector3(0.16f, 0.16f, 0.16f);
+
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         //UpdatePhase
-        //ghost.Object.Transform.position = eventData.position;
+        Debug.Log("Are we dragging?");
+        Vector3 screenPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(screenPosition);
+        mousePos.z = 0;
+        ghostDragon.transform.position = mousePos;
     }
 
     public void OnEndDrag(PointerEventData eventData)

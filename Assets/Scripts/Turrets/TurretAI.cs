@@ -23,14 +23,12 @@ public class TurretAI : MonoBehaviour
         enemiesInRange.RemoveAll(enemy => enemy == null);
         if(enemiesInRange.Count > 0 && canShot)
         {
-
             shottingDirection = TargetEnemy().transform.position - this.transform.position;
             shottingDirection.Normalize();
             GameObject enemyInRange = Instantiate(bullet, bulletLocation, Quaternion.identity);
             enemyInRange.GetComponent<BulletDirection>().SetDirection(shottingDirection);
             canShot = false;
             StartCoroutine(FireCooldown());
-
         }
 
     }
