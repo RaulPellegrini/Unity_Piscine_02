@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
-public class MP : MonoBehaviour
+public class ManaUI : MonoBehaviour
 {
     [SerializeField] GameObject[] manaPointsUI;
-    [SerializeField] int mana = 3;
+    public int mana = 3;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
@@ -41,6 +41,7 @@ public class MP : MonoBehaviour
             mana --;
         }
     }
+    
 
     private void ManaStart(int startingMana)
     {

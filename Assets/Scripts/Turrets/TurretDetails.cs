@@ -2,6 +2,6 @@ using UnityEngine;
 
 public class TurretDetails : MonoBehaviour
 {
-    [SerializeField] public float manaCost = 5;
-    [SerializeField] public float summonCooldown = 15;
+    public float manaCost = 5;
+    public float summonCooldown = 15;
 }

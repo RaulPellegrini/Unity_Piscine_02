@@ -12,6 +12,7 @@ public class SummonsUI : MonoBehaviour
         if(dragonsPrefabs.Length != invocationsUI.Length && dragonsPrefabs != bullets)
             Debug.Log("Invocations prefabs does not match with UI");
 
+
         for(int i = 0; i < dragonsPrefabs.Length; i++)
         {
 
@@ -23,9 +24,9 @@ public class SummonsUI : MonoBehaviour
 
             float[] details = {manaCost, damage, cooldown};
             invocationsUI[i].GetComponent<UIInvocationDisplay>().setDetails(details, image);
-            invocationsUI[i].GetComponent<DragHandler>().SetDragon(dragonsPrefabs[i]);
+            invocationsUI[i].GetComponent<DragHandler>().SetDragonDragHandler(dragonsPrefabs[i]);
         }
 
     }
-
+  
 }
