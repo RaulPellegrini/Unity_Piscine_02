@@ -132308,6 +132308,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3710164661257179887, guid: a97565d267b33e649b2f304f5fb9a5e2, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6300801133168117681, guid: a97565d267b33e649b2f304f5fb9a5e2, type: 3}
       propertyPath: m_Name
       value: GreenDragon Variant (3)

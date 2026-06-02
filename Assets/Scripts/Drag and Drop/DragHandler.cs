@@ -1,15 +1,14 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
-public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private GameObject dragon;
     private GameObject ghostDragon;
     private float mp;
     private float mpCost;
     private float cdTime;
+    private bool beingDragged = false;
     private bool inCd = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -22,6 +21,19 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         mpCost = turretDetails.manaCost;
         cdTime = turretDetails.summonCooldown;
     }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("Mouse in");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("Mouse out");
+
+    }
+
+
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -40,11 +52,14 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void OnDrag(PointerEventData eventData)
     {
         //UpdatePhase
-        Debug.Log("Are we dragging?");
-        Vector3 screenPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(screenPosition);
-        mousePos.z = 0;
-        ghostDragon.transform.position = mousePos;
+        if(mp >= mpCost && !inCd)
+        {
+            Debug.Log("Are we dragging?");
+            Vector3 screenPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
+            Vector3 mousePos = Camera.main.ScreenToWorldPoint(screenPosition);
+            mousePos.z = 0;
+            ghostDragon.transform.position = mousePos;
+        }
     }
 
     public void OnEndDrag(PointerEventData eventData)

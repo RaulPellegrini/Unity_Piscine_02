@@ -18,6 +18,11 @@ public class ManaUI : MonoBehaviour
         EnemyDestroyed.ManaReward -= manaLisener;
     }
 
+    // public void manaHighLight(bool activate) //to be implemented
+    // {
+        
+    // }
+
     private void manaLisener(int manaGained)
     {
         //Debug.Log("I heard you!");
