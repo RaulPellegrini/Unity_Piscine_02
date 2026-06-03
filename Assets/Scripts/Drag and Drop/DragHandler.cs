@@ -58,7 +58,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         //UpdatePhase
         if(beingDragged)
         {
-            Debug.Log("Are we dragging?");
+            //Debug.Log("Are we dragging?");
             Vector3 screenPosition = new Vector3(eventData.position.x, eventData.position.y, -Camera.main.transform.position.z);
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(screenPosition);
             mousePos.z = 0;
@@ -68,6 +68,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
+
         beingDragged = false;
         //resolve phase
     }
