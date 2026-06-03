@@ -24,13 +24,16 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        //check if there's enough mana
+        //I need a mana interface to disconect this code from mana, according to best practice
+        //Set highligh in mana
         Debug.Log("Mouse in");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         Debug.Log("Mouse out");
-
+        //remove manahighligh
     }
 
 
@@ -41,21 +44,22 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         mp = GetComponentInParent<ManaUI>().mana;
         if(mp >= mpCost && !inCd)
         {
+            beingDragged = true;
             ghostDragon = new GameObject("Ghost Dragon");
             ghostDragon.AddComponent<SpriteRenderer>().sprite = dragon.GetComponent<SpriteRenderer>().sprite;
             ghostDragon.GetComponent<SpriteRenderer>().sortingOrder = 10;
             ghostDragon.transform.localScale = new Vector3(0.16f, 0.16f, 0.16f);
-
+            //Reduce mana;
         }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         //UpdatePhase
-        if(mp >= mpCost && !inCd)
+        if(beingDragged)
         {
             Debug.Log("Are we dragging?");
-            Vector3 screenPosition = new Vector3(eventData.position.x, eventData.position.y, 0);
+            Vector3 screenPosition = new Vector3(eventData.position.x, eventData.position.y, -Camera.main.transform.position.z);
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(screenPosition);
             mousePos.z = 0;
             ghostDragon.transform.position = mousePos;
@@ -64,6 +68,7 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
 
     public void OnEndDrag(PointerEventData eventData)
     {
+        beingDragged = false;
         //resolve phase
     }
 }
