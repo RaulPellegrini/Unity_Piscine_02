@@ -1,17 +1,29 @@
+using System.Collections;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    private GameObject dragon;
+    public GameObject dragon;
     private GameObject ghostDragon;
     private float mp;
     private float mpCost;
     private float cdTime;
-    private bool beingDragged = false;
     private bool inCd = false;
+    private bool beingDragged = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public void confirmSummon(Vector3 position)
+    {
+        Debug.Log(position);
+        Instantiate(dragon, new Vector3 (position.x, position.y, 0), quaternion.identity);
+        inCd = true;
+        StartCoroutine(ColdownCounter());
+        //Send news to mana
+    }
 
 
     public void SetDragonDragHandler(GameObject dragonPrefab)
@@ -37,7 +49,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
 
 
-
     public void OnBeginDrag(PointerEventData eventData)
     {
         //Setup phase
@@ -58,7 +69,6 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
         //UpdatePhase
         if(beingDragged)
         {
-            //Debug.Log("Are we dragging?");
             Vector3 screenPosition = new Vector3(eventData.position.x, eventData.position.y, -Camera.main.transform.position.z);
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(screenPosition);
             mousePos.z = 0;
@@ -67,9 +77,18 @@ public class DragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     }
 
     public void OnEndDrag(PointerEventData eventData)
+    {  
+        Destroy(ghostDragon);
+        beingDragged = false;
+    }
+
+    IEnumerator ColdownCounter()
     {
 
-        beingDragged = false;
-        //resolve phase
+        yield return new WaitForSeconds(cdTime);
+        inCd = false;
+
     }
+
+
 }
