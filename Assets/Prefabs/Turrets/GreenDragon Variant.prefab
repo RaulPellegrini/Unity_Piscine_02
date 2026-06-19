@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: bullet
       value: 
       objectReference: {fileID: 2449157072383726895, guid: a2b9ffa6b2e308f418a2b6fe2a682501, type: 3}
+    - target: {fileID: 2956418028259690534, guid: 8ed99b1f8ca981040a9752f9b2a90383, type: 3}
+      propertyPath: fireRate
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4028852708943081244, guid: 8ed99b1f8ca981040a9752f9b2a90383, type: 3}
       propertyPath: m_Name
       value: GreenDragon Variant
@@ -71,6 +75,10 @@ PrefabInstance:
     - target: {fileID: 8265943507759228834, guid: 8ed99b1f8ca981040a9752f9b2a90383, type: 3}
       propertyPath: manaCost
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8265943507759228834, guid: 8ed99b1f8ca981040a9752f9b2a90383, type: 3}
+      propertyPath: summonCooldown
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

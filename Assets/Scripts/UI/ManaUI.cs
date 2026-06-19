@@ -4,26 +4,24 @@ public class ManaUI : MonoBehaviour
 {
     [SerializeField] GameObject[] manaPointsUI;
     public int mana = 3;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Start()
     {
-        EnemyDestroyed.ManaReward += manaLisener;
+        EnemyDestroyed.ManaReward += ManaLisener;
+        DragHandler.ManaCost += ManaUse;
         ManaStart(mana);
     }
 
 
     void OnDestroy()
     {
-        EnemyDestroyed.ManaReward -= manaLisener;
+        EnemyDestroyed.ManaReward -= ManaLisener;
+        DragHandler.ManaCost -= ManaUse;
     }
 
-    // public void manaHighLight(bool activate) //to be implemented
-    // {
-        
-    // }
-
-    private void manaLisener(int manaGained)
+    private void ManaLisener(int manaGained)
     {
         //Debug.Log("I heard you!");
         for(int i = 0; i < manaGained && i <manaPointsUI.Length; i++)
@@ -38,12 +36,14 @@ public class ManaUI : MonoBehaviour
         }
     }
 
-    private void ManaUse()
+    private void ManaUse(float manaSpent)
     {
-        if(mana > 0)
+        Debug.Log(manaSpent);
+        
+        for(float i = manaSpent; i > 0; i--)
         {
+            mana --;            
             manaPointsUI[mana].GetComponent<Image>().color = Color.black;
-            mana --;
         }
     }
     
@@ -55,5 +55,10 @@ public class ManaUI : MonoBehaviour
 
     }
 
+
+    // public void manaHighLight(bool activate) //to be implemented
+    // {
+        
+    // }
 
 }
